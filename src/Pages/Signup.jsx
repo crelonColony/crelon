@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../api/api";
-import "../Style/Signup.css"; // 👈 Import CSS
+import "../Style/SignUp.css"; // 👈 Import CSS
 
 function Signup() {
   const [form, setForm] = useState({
@@ -70,3 +70,4 @@ function Signup() {
 }
 
 export default Signup;
+
