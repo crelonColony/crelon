@@ -1,0 +1,146 @@
+/* === Base Style === */
+.card2 {
+  position: relative;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(.17,.67,.45,1.25), box-shadow 0.6s ease;
+  will-change: transform;
+  background-size: 130%;
+  transform-style: preserve-3d;
+}
+
+/* Background Slow Float Animation */
+.card2 {
+  animation: bgFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes bgFloat {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 80% 50%;
+  }
+}
+
+/* Hover Lift + Deeper Shadow */
+.card2:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Smooth Border Glow */
+.card2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff5100, #ffb700, #ff5100);
+  background-size: 220% 220%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderGlow 4s ease infinite;
+  z-index: 0;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Icon */
+.icon-container {
+  z-index: 2;
+  font-size: 40px;
+  transition: transform 0.6s cubic-bezier(.17,.67,.45,1.25);
+}
+
+/* Slight Drift Hover */
+.card2:hover .icon-container {
+  transform: translateY(-6px) rotate(4deg) scale(1.12);
+}
+
+/* Text Fade-in */
+.text-container {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.85;
+  transition: opacity 0.5s ease;
+}
+
+.card2:hover .text-container {
+  opacity: 1;
+}
+
+/* Title */
+.text-container h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* List Style */
+.list-container {
+  z-index: 2;
+  display: flex;
+}
+
+.list-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.list-container ul li div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.9;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* List hover subtle slide */
+.card2:hover ul li div {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+/* Smooth entrance animation */
+.animated-card {
+  animation: fadeUp 0.8s cubic-bezier(.24,.82,.29,.99);
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(35px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .card2 {
+    padding: 28px;
+  }
+
+  .text-container h3 {
+    font-size: 1.3rem;
+  }
+}

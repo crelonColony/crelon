@@ -1,0 +1,167 @@
+.testimonials-section {
+  width: 100%;
+  background: #f6f7fa;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonials-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* SIDEBAR */
+.testimonials-sidebar {
+  width: 300px;
+}
+
+.testimonials-label {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #a57c68;
+  margin-bottom: 12px;
+}
+
+.testimonials-sidebar h2 {
+  color: #FF5100;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.testimonials-sidebar p {
+  font-size: 1.05rem;
+  color: #3f405b;
+  margin-bottom: 36px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #ff7a00, #ff5100);
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(255, 103, 29, 0.4);
+  color: white;
+  
+}
+
+/* ✅ EXACTLY 3 CARDS IN GRID */
+.testimonials-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 22px;
+  align-items: stretch;
+  padding: 10px;
+}
+
+/* CARD */
+.testimonial-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px 26px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.17);
+}
+
+/* ICON */
+.testimonial-icon {
+  color: #FF5100;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+/* QUOTE TEXT */
+.testimonial-quote {
+  font-size: 1.25rem;
+  color: #FF5100;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* MAIN TEXT */
+.testimonial-text {
+  font-size: 1rem;
+  color: #3d3d3d;
+  text-align: center;
+  margin-bottom: 26px;
+  line-height: 1.5;
+}
+
+/* USER */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-user-name {
+  font-weight: 700;
+  color: #FF5100;
+}
+
+.testimonial-user-title {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+}
+
+/* ✅ RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+  .testimonials-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonials-sidebar {
+    width: 100%;
+  }
+
+  .testimonials-cards {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,195 @@
+.tilt-wrapper {
+  perspective: 1200px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Smooth tilt transitions */
+.event-card-modern {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+}
+
+/* Slight tilt + lift already exists, keep it */
+
+
+
+/* ====== CARD CONTAINER ====== */
+.event-card-modern {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  max-width: 420px;
+  min-width: 320px;
+  margin: 0 auto 35px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+
+  /* ✅ Simple clean border (does NOT break animations) */
+  border: 1px solid rgb(243, 149, 7);
+
+
+  transform: translateY(40px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(.3,.7,.4,1), opacity 0.7s ease;
+}
+
+/* On scroll visible */
+.event-card-modern.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Hover-lift soft */
+.event-card-modern:hover {
+  box-shadow: 0 14px 32px rgba(0,0,0,0.16);
+  transform: translateY(-6px);
+}
+
+/* ====== IMAGE SECTION ====== */
+.event-img-modern {
+  height: 230px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #eaeaea;
+}
+
+.event-img-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Zoom image on hover + overlay fade */
+.event-card-modern:hover .event-img-modern img {
+  transform: scale(1.13);
+}
+
+.event-img-modern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4));
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.event-card-modern:hover .event-img-modern::after {
+  opacity: 1;
+}
+
+/* ====== TEXT + CONTENT ====== */
+.event-details-modern {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.event-title-modern {
+  font-weight: 600;
+  font-size: 20px;
+  color: #ff5100;
+}
+
+.event-description-modern {
+  font-size: 14px;
+  color: #5a5a5a;
+  line-height: 1.45;
+}
+
+/* ====== META ====== */
+.meta-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.meta-modern span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.meta-modern span i{
+  color: #ff5100;
+}
+/* ====== BUTTON ====== */
+.event-button-row-modern {
+  margin-top: 4px;
+}
+
+.register-btn-modern {
+  background: linear-gradient(135deg, #ff7a00, #ff5100);
+  border: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.register-btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,100,50,0.35);
+}
+
+.register-btn-modern span {
+  transition: transform .25s ease;
+}
+.register-btn-modern:hover span {
+  transform: translateX(5px);
+}
+
+/* ====== CONTACT OPTIONAL SECTION (If used) ====== */
+.contact-modern {
+  border-top: 1px solid #e9e9e9;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.contact-photo-modern {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-name-modern {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.contact-phone-modern {
+  font-size: 13px;
+  color: #777;
+}
+
+.call-btn-modern {
+  margin-left: auto;
+  border: none;
+  background: #ecfff1;
+  padding: 9px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow .2s ease;
+}
+
+.call-btn-modern:hover {
+  box-shadow: 0 4px 12px rgba(0,180,90,0.25);
+}

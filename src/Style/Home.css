@@ -1,0 +1,232 @@
+/* === Hero Section === */
+.hero-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* === Why Join Section === */
+.why-join-container {
+  margin-top: 100px;
+}
+
+.join-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.join-head div {
+  display: flex;
+  gap: 6px;
+}
+
+.join-head div h2 {
+  font-size: 50px;
+}
+
+.name {
+  background: linear-gradient(90deg, #FF5100, #ff51009a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.join-head p {
+  font-size: 21px;
+  color: #6a696d;
+  text-align: center;
+}
+
+/* === Card1 Section === */
+.card1-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  justify-content: center;
+  justify-items: center;
+  width: fit-content;
+  margin-bottom: 100px;
+  overflow: hidden;
+  padding-left: 80px;
+}
+
+/* LEFT SIDE GROUP */
+.card1-container-show1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  opacity: 0;
+  transform: translate(-40px, 20px);
+  will-change: transform, opacity;
+  transition: 
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(.17,.67,.45,1.25);
+  justify-content: center;
+  justify-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.card1-container-show1.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition-delay: 0.1s;
+  
+}
+
+/* RIGHT SIDE GROUP */
+.card1-container-show2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  opacity: 0;
+  transform: translate(40px, 20px);
+  will-change: transform, opacity;
+  transition: 
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(.17,.67,.45,1.25);
+}
+
+.card1-container-show2.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition-delay: 0.25s;
+}
+/* === Join Section (Card2) === */
+.join-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  /* margin: 20px; */
+  margin-bottom: 100px;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.join-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* === Join Community Banner === */
+.joincommnitybanner {
+  margin-top: 100px;
+  padding: 10px;
+}
+
+.logoCarousel{
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+.contact-form{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.contact-form.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-section{
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.faq-section.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+/* === Media Queries === */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .card1-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .join-container {
+    gap: 8px;
+    margin: 15px;
+    padding: 8px;
+    flex-direction: row;
+  }
+
+  .join-head div h2 {
+    font-size: 42px;
+  }
+
+  .join-head p {
+    font-size: 19px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card1-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 15px;
+    padding: 10px;
+    
+  }
+
+  .join-container {
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .why-join-container {
+    margin-top: 70px;
+  }
+
+  .join-head div h2 {
+    font-size: 36px;
+  }
+
+  .join-head p {
+    font-size: 18px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .card1-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 10px;
+    padding: 8px;
+  }
+
+  .join-container {
+    gap: 8px;
+    margin: 10px;
+    padding: 6px;
+  }
+
+  .join-head div h2 {
+    font-size: 28px;
+  }
+
+  .join-head p {
+    font-size: 16px;
+  }
+}

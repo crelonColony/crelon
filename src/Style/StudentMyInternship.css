@@ -1,0 +1,71 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease-in-out;
+  overflow-x: hidden;
+  z-index: 5;
+}
+
+.main-content.collapsed {
+  margin-left: 80px; /* adjust based on your sidebar width */
+}
+
+.internship-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.internship-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 4rem;
+  color: #555;
+}
+
+.browse-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.browse-link:hover {
+  text-decoration: underline;
+}
+
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.internship-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}

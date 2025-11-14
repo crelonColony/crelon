@@ -1,0 +1,73 @@
+.card1-wrapper {
+  position: relative;
+  width: 550px;
+  margin: 30px auto;
+  padding: 40px 25px 25px 100px;
+  border-radius: 25px;
+  border: 2px solid #FF5100;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  overflow: hidden; /* keep fill INSIDE card */
+  transition: transform 0.5s ease;
+}
+
+.card1-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+/* Expanding circle (fills card) */
+.circle-fill {
+  position: absolute;
+  width: 6em;
+  height: 6em;
+  top: -6em;
+  right: -1em;
+  border-radius: 50%;
+  z-index: 0;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(.25,.75,.4,1);
+}
+
+.card1-wrapper:hover .circle-fill {
+  transform: scale(9.7);
+}
+
+/* ICON BOX (with gradient) */
+.icon-box {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  position: absolute;
+  top: 40px;
+  left: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  color: white;
+  z-index: 2; /* stays ABOVE circle */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: filter 0.4s ease;
+}
+
+/* Optional soft highlight on hover */
+.card1-wrapper:hover .icon-box {
+  filter: brightness(1.15);
+}
+
+/* TEXT AREA */
+.card1 {
+  position: relative;
+  z-index: 3; /* text stays above circle always */
+}
+
+.card1 h3,
+.card1 p {
+  margin: 0 0 10px;
+  transition: color 0.5s ease;
+  color: #333;
+}
+
+.card1-wrapper:hover h3,
+.card1-wrapper:hover p {
+  color: white !important;
+}

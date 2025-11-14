@@ -1,0 +1,244 @@
+/* === ROOT RESET === */
+* {
+  box-sizing: border-box;
+}
+
+/* === Layout === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  z-index: 5;
+  pointer-events: auto;
+  overflow: hidden;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  animation: navSlideDown 0.7s ease forwards;
+}
+
+/* Add smooth background color when scrolling */
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* === Logo === */
+.logo-container img {
+  height: 45px;
+  margin: 5px;
+  transition: transform 0.4s ease;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.logo-container:hover img {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* === Navbar Links === */
+.navbar-container ul {
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  cursor: pointer;
+  font-family: "Righteous", Arial, sans-serif;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Link Text with Animated Underline === */
+.nav-3 .linktext {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  color: #000;
+  overflow: hidden;
+}
+
+.nav-3 .linktext::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff5100;
+  transition: width 0.35s ease;
+}
+
+.nav-3 .linktext:hover::after {
+  width: 100%;
+}
+.nav-3 .linktext:hover {
+  color: #ff5100;
+}
+
+/* === Right Section === */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 10px;
+}
+
+/* === Log In Button with Glow === */
+.log-btn {
+  display: inline-block;
+  padding: 6px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  color: #ffffffda;
+  background-color: #FF5100;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.log-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 81, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.log-btn.on-home {
+  background-color: #fff;
+  color: #FF5100;
+}
+
+.log-btn.not-home {
+  background-color: #FF5100;
+  color: white;
+}
+
+/* === Hamburger Menu === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 24px;
+  cursor: pointer;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* === Mobile Navbar Animation === */
+.navbar-container {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.navbar-container.open {
+  animation: fadeDown 0.4s ease forwards;
+}
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Keyframes for Entry === */
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  nav {
+    padding: 10px 20px;
+  }
+  .navbar-container ul {
+    gap: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
+    z-index: 99;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .navbar-container.open {
+    transform: translateY(0);
+    pointer-events: auto;
+    opacity: 1;
+  }
+  .navbar-container ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 22px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .log-btn {
+    font-size: 0.9rem;
+    padding: 5px 18px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .logo-container img {
+    height: 42px;
+  }
+  .log-btn {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}

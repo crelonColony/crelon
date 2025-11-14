@@ -1,0 +1,518 @@
+/* 
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+
+.workshop-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.workshop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.workshop-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #eee;
+}
+
+
+.workshop-content {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.workshop-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.workshop-content p {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.workshop-type {
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  margin-top: 0.4rem;
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.workshop-type.free {
+  background: #e8f9e9;
+  color: #2e7d32;
+}
+
+.workshop-type.paid {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+
+.apply-btn,
+.registered-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-btn {
+  background: #007bff;
+  color: white;
+}
+
+.apply-btn:hover {
+  background: #005fcc;
+}
+
+.registered-btn {
+  background: #ccc;
+  color: #444;
+  cursor: not-allowed;
+}
+
+
+.workshop-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+
+.workshop-form-container {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  animation: scaleIn 0.25s ease-in-out;
+}
+
+.workshop-form-container h2 {
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.workshop-form-container p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.form-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #bdbdbd;
+}
+
+.confirm-btn {
+  background: #007bff;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #005fcc;
+}
+
+.confirm-btn:disabled {
+  background: #a0c4ff;
+  cursor: not-allowed;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .workshop-card {
+    border-radius: 0.8rem;
+  }
+
+  .workshop-form-container {
+    padding: 1.5rem;
+  }
+
+  .workshop-content h3 {
+    font-size: 1.05rem;
+  }
+} */
+
+/* Grid Layout */
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+/* Modern Card Style */
+.workshop-card-modern {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  min-width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  overflow: hidden;
+  background: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0 auto;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.workshop-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.17);
+}
+
+/* Card Image Section */
+.workshop-img-modern {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #eee;
+}
+.workshop-img-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.badge-workshop {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 18px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.action-icons-workshop {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 12px;
+}
+.icon-btn-workshop {
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  width: 38px;
+  height: 38px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.icon-btn-workshop:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.21);
+}
+
+/* Card Content */
+.workshop-content-modern {
+  padding: 18px 18px 0 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60%;
+  gap: 10px;
+}
+.workshop-title-modern {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  color: #252525;
+}
+
+.meta-workshop{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.workshop-trainer,
+.workshop-location,
+.workshop-date {
+  font-size: 14px;
+  color: #676767;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.workshop-type-modern {
+  font-size: 15px;
+  border-radius: 14px;
+  padding: 6px 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.workshop-type-modern.free {
+  background: #e8f9e9;
+  color: #2e7d32;
+}
+.workshop-type-modern.paid {
+  background: #fff3e0;
+  color: #e65100;
+}
+.workshop-button-row-modern {
+  margin-bottom: 10px;
+}
+.apply-btn-modern {
+  background: #ff5100;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.apply-btn-modern:hover {
+  background: #ff5100e1;
+}
+.registered-btn-modern {
+  background: #e0f7e9;
+  color: #2da97b;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: not-allowed;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Optional Contact Section in Card */
+.contact-modern {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #eee;
+  padding: 13px 0 0 0;
+  margin-top: 9px;
+}
+.contact-photo-modern {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contact-name-modern {
+  font-weight: bold;
+  font-size: 15px;
+  color: #313131;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.verified-modern {
+  color: #1e90ff;
+  font-size: 14px;
+}
+.contact-phone-modern {
+  font-size: 13px;
+  color: #6b6b6b;
+}
+.call-btn-modern {
+  margin-left: auto;
+  background: #e0f7e9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+.call-btn-modern:hover {
+  box-shadow: 0 2px 9px rgba(68, 228, 142, 0.18);
+}
+
+/* Modal Styles */
+.workshop-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.workshop-form-container {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  animation: scaleIn 0.25s ease-in-out;
+}
+
+.workshop-form-container h2 {
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.workshop-form-container p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #bdbdbd;
+}
+
+.confirm-btn {
+  background: #007bff;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #005fcc;
+}
+
+.confirm-btn:disabled {
+  background: #a0c4ff;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .workshop-card-modern {
+    border-radius: 0.8rem;
+  }
+  .workshop-form-container {
+    padding: 1.5rem;
+  }
+  .workshop-title-modern {
+    font-size: 1.05rem;
+  }
+}

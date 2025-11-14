@@ -1,0 +1,64 @@
+/* === EVENTS TABS CONTAINER === */
+.events-tabs-container {
+  display: flex;
+  flex-wrap: wrap; /* allows tabs to wrap on smaller screens */
+  gap: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(60, 62, 70, 0.07);
+  padding: 12px 16px;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+}
+
+/* === INDIVIDUAL TAB BUTTON === */
+.events-tab {
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  color: #57577e;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.events-tab:hover {
+  background: #f4f2ff;
+  color: #FF5100;
+}
+
+/* === ACTIVE TAB === */
+.events-tab.active {
+  background: #ede8ff;
+  color: #FF5100;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(255, 81, 0, 0.2);
+}
+
+/* === RESPONSIVE TABS FOR MOBILE === */
+@media (max-width: 768px) {
+  .events-tabs-container {
+    justify-content: center;
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .events-tab {
+    font-size: 0.95rem;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .events-tabs-container {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .events-tab {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}

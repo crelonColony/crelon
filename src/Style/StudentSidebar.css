@@ -1,0 +1,200 @@
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  color: #1e293b;
+  background-color: white;
+  transition: width 0.1s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar.expanded {
+  width: 240px;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* Sidebar top */
+.sidebar-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Sidebar title */
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Navigation links */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 10px;
+  align-items: start;
+  justify-content: start;
+}
+
+.nav-link,
+.dropdown-btn {
+  display: flex;
+  align-items: start;
+  /* justify-content: start; */
+  gap: 12px;
+  color: #000;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-link:hover,
+.dropdown-btn:hover {
+  background: #FF5100;
+  color: #fff;
+}
+
+
+.dropdown-btn span:hover{
+  color: #fff;
+}
+/* Dropdown content */
+.dropdown-content {
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0000008a;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+.submenu-link:hover {
+  color: #FF5100;
+}
+
+.menu-btn{
+  background: transparent;
+  border: none;
+}
+
+/* Add to existing CSS */
+
+/* ====== NEW ADDITIONS / IMPROVEMENTS ====== */
+
+/* Smooth animation for expand/collapse */
+.sidebar {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo section */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-logo .logo {
+  width: 38px;
+  height: auto;
+}
+
+/* Active dropdown highlighting */
+.dropdown-btn.active,
+.dropdown-btn.active:hover {
+  background-color: #ff5100;
+  color: #fff;
+}
+
+/* Submenu subtle animation */
+.dropdown-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for submenu */
+.submenu-link {
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.submenu-link:hover {
+  background-color: rgba(255, 81, 0, 0.1);
+  color: #ff5100;
+}
+
+/* Scrollbar styling for long menus */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ff5100;
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #e84a00;
+}
+
+/* Menu button hover */
+.menu-btn:hover {
+  color: #ff5100;
+  transition: color 0.3s ease;
+}
+
+/* Main content wrapper */
+.main-content {
+  margin-left: 240px;
+  transition: margin-left 0.1s ease;
+  padding: 20px 30px; /* increased padding */
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.main-content.collapsed {
+  margin-left: 70px; /* When sidebar collapsed */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 2000;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+
