@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import myVideo from "../assets/video.mp4";
-import "../Style/heroSection3.css";
+import "../Style/HeroSection3.css";
 
 export default function HeroSection3() {
   const words = ["Connect", "Collaborate", "Create", "with" ,"Crelon"];
@@ -55,3 +55,4 @@ export default function HeroSection3() {
     </div>
   );
 }
+
