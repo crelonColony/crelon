@@ -7,7 +7,7 @@ import { useOnScreen } from "../hooks/useOnScreen";
 import ProgramHero from "../assets/programImages.png"
 import GlimpseCarousel from "../Component/GlimpseCarousel";
 import Testimonial from "../Component/Testonomial";
-import WordshopImage from "../assets/Workshop.png"
+
 import EvetnSection from "../Component/EventSecton"
 const Program = () => {
   const [cardRef, cardVisible] = useOnScreen();
@@ -132,3 +132,4 @@ const Program = () => {
 };
 
 export default Program;
+
