@@ -1,0 +1,24 @@
+/* 🧭 Fix dropdown/overlay hiding issue */
+.search-container,
+.notification-dropdown,
+.profile-dropdown,
+.dropdown-menu {
+  position: relative;
+  z-index: 1000 !important; /* make sure dropdowns appear above cards */
+}
+
+/* 🧱 Prevent other elements from overlapping dropdowns */
+.studentDashGrid,
+.grid1,
+.grid2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* If your header/search bar is sticky */
+.header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: #fff;
+}
